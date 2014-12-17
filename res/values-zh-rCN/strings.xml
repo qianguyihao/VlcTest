@@ -4,7 +4,7 @@
     <string name="ok">确定</string>
     <string name="cancel">取消</string>
     <string name="other">其他</string>
-    <string name="sortby">排序条件</string>
+    <string name="sortby">节目一</string>
     <string name="sortby_name">名称</string>
     <string name="sortby_length">长度</string>
     <string name="searchable_hint">搜索…</string>
@@ -19,7 +19,7 @@
     <string name="append">追加</string>
     <string name="play_all">全部播放</string>
     <string name="append_all">全部追加</string>
-    <string name="last_playlist">上次使用时的播放列表</string>
+    <string name="last_playlist">节目二</string>
     <string name="delete">删除</string>
     <string name="remove">移除</string>
     <string name="set_song">设为铃声</string>
@@ -57,7 +57,7 @@
     <string name="audio">音频</string>
     <string name="video">视频</string>
     <string name="bookmarks">书签</string>
-    <string name="equalizer">均衡器</string>
+    <string name="equalizer">节目三</string>
     <string name="all_albums">所有专辑</string>
     <string name="genres">流派</string>
     <string name="playlists">播放列表</string>
