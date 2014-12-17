@@ -90,6 +90,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.slidingmenu.lib.SlidingMenu;
 
@@ -625,6 +626,15 @@ public class MainActivity extends ActionBarActivity {
 		showSecondaryFragment("search");
 		return true;
 	}
+	
+	private Handler mDelayPlayHander = new Handler(){
+
+		@Override
+		public void handleMessage(Message msg) {
+			onOpenUDP();
+		}
+		
+	};
 
 	/**
 	 * Handle onClick form menu buttons
@@ -640,6 +650,9 @@ public class MainActivity extends ActionBarActivity {
 		//播放节目一
 		case R.id.ml_menu_sortby:
 		onOpenURL1();
+		//子线程里延时，并调用onOpenUDP()，打开端口
+		Toast.makeText(this, "正在打开", Toast.LENGTH_SHORT).show();
+		mDelayPlayHander.sendEmptyMessageDelayed(0, 1500);
 		break;			
 
 		// About
@@ -653,7 +666,10 @@ public class MainActivity extends ActionBarActivity {
 			break;
 		//播放节目三	
 		case R.id.ml_menu_equalizer:
-			onOpenURL3();  
+			onOpenURL3();
+			//子线程里延时，并调用onOpenUDP()，打开端口
+			Toast.makeText(this, "正在打开", Toast.LENGTH_SHORT).show();
+			mDelayPlayHander.sendEmptyMessageDelayed(0, 1500);
 			break;
 		// Refresh
 		case R.id.ml_menu_refresh:
@@ -669,11 +685,14 @@ public class MainActivity extends ActionBarActivity {
 				MediaLibrary.getInstance().loadMediaItems(this, true);
 			break;
 		// Restore last playlist
-			//播放节目二
+		//播放节目二
 		case R.id.ml_menu_last_playlist:
 			//Intent i = new Intent(AudioService.ACTION_REMOTE_LAST_PLAYLIST);
 			//sendBroadcast(i);
 			onOpenURL2();
+			//子线程里延时，并调用onOpenUDP()，打开端口
+			Toast.makeText(this, "正在打开", Toast.LENGTH_SHORT).show();
+			mDelayPlayHander.sendEmptyMessageDelayed(0, 1500);
 			break;
 		// Open MRL
 		case R.id.ml_menu_open_mrl:
